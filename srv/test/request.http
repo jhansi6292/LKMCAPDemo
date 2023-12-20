@@ -1,0 +1,42 @@
+###
+##Deep Insert for entity with Compositions
+##Deep Insert-Example 1
+
+POST http://localhost:4004/SalesOrderService/SalesOrders HTTP/1.1
+Content-Type: application/json
+
+{
+  "ID": "6",
+  "description": "Order 5",
+  "customerNo": "1",
+  "items": [
+    {
+      "item": 10,
+      "material": "Laptop",
+      "quantity": 100
+    },
+    {
+      "item": 20,
+      "material": "Printer",
+      "quantity": 50
+    },
+    {
+      "item": 30,
+      "material": "Mobile",
+      "quantity": 20
+    }
+  ]
+}
+
+###
+POST http://localhost:4004/SalesOrderService/Customers HTTP/1.1
+Content-Type: application/json
+
+{
+    "customerNo": "2",
+    "customerName": "Peter"
+}
+
+###
+
+GET http://localhost:4004/SalesOrderService/SalesOrders
